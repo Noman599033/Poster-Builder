@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poster Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mx-auto p-8">
+    <div class="text-center mb-4">
+        <h1 class="text-3xl font-bold">Poster Builder</h1>
+    </div>
+    <div class="flex justify-center">
+        <div class="w-3/5 mr-4 border p-4">
+            <!-- Left-side editor section -->
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold">Editor</h2>
+                <button id="clearBtn" class="px-2 py-1 bg-red-500 text-white rounded">Clear</button>
+            </div>
+            <div class="flex flex-col">
+                <!-- Elements will be dynamically added here -->
+                <button id="headerBtn" class="bg-blue-500 text-white rounded px-2 py-1 mb-2">Add Header</button>
+                <div id="headerBlock" class="hidden border p-4 mb-2 rounded bg-white">
+                    <input id="headerInput" class="w-full text-lg outline-none" type="text" placeholder="Enter Header Text">
+                    <!-- Text color buttons -->
+                    <div class="mt-2">
+                        <button class="px-2 py-1 bg-blue-500 text-white rounded mr-2" id="blueBtn">Blue Text</button>
+                        <button class="px-2 py-1 bg-green-500 text-white rounded mr-2" id="greenBtn">Green Text</button>
+                        <button class="px-2 py-1 bg-red-500 text-white rounded mr-2" id="redBtn">Red Text</button>
+                    </div>
+                    <!-- Text alignment buttons -->
+                    <div class="mt-2">
+                        <button class="px-2 py-1 bg-gray-500 text-white rounded mr-2" id="leftAlignBtn">Left Align</button>
+                        <button class="px-2 py-1 bg-gray-500 text-white rounded mr-2" id="centerAlignBtn">Center Align</button>
+                        <button class="px-2 py-1 bg-gray-500 text-white rounded mr-2" id="rightAlignBtn">Right Align</button>
+                    </div>
+                    <button id="cancelHeaderBtn" class="px-2 py-1 bg-red-500 text-white rounded mt-2">Cancel</button>
+                </div>
+                <button id="imageBtn" class="bg-blue-500 text-white rounded px-2 py-1 mb-2">Add Image</button>
+                <div id="imageBlock" class="hidden border p-4 mb-2 rounded bg-white">
+                    <input id="imageInput" class="w-full outline-none" type="file" accept="image/*">
+                    <button id="cancelImageBtn" class="px-2 py-1 bg-red-500 text-white rounded mt-2">Cancel</button>
+                </div>
+                <button id="descriptionBtn" class="bg-blue-500 text-white rounded px-2 py-1 mb-2">Add Description</button>
+                <div id="descriptionBlock" class="hidden border p-4 mb-2 rounded bg-white">
+                    <textarea id="descriptionInput" class="w-full h-24 resize border outline-none" placeholder="Enter Description"></textarea>
+                    <button id="cancelDescriptionBtn" class="px-2 py-1 bg-red-500 text-white rounded mt-2">Cancel</button>
+                </div>
+            </div>
+            <div class="mt-4" id="uploadedImageName">
+                <!-- Image file name will be shown here -->
+            </div>
+        </div>
+        <div class="w-2/5 border p-4">
+            <!-- Right-side preview section -->
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold">Preview</h2>
+            </div>
+            <div id="preview" class="border border-gray-400 p-4">
+                <!-- Poster preview will be shown here -->
+                <h2 id="previewHeader" class="text-xl font-semibold"></h2>
+                <div id="previewImage"></div>
+                <p id="previewDescription"></p>
+            </div>
+            <div class="mt-4 text-center">
+                <a href="#" class="block px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded" id="downloadBtn">Download Poster</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
